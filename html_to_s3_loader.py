@@ -28,7 +28,7 @@ def s3_keys(s3, bucket, prefix):
         token = r["NextContinuationToken"]
     return out
 
-def main(bucket, prefix="bls/pr/"):
+def main(bucket, prefix):
     s = requests.Session()
     s.headers.update({"User-Agent": UA, "Accept": "*/*"})
     s3 = boto3.client("s3")
@@ -69,7 +69,4 @@ def main(bucket, prefix="bls/pr/"):
 
 if __name__ == "__main__":
     main(bucket="s3-quest-bls-dataset-neelima", prefix="bls/pr/")
-    """s = requests.Session()
-    s.headers.update({"User-Agent": UA, "Accept": "*/*"})
-    print(list_src(s))
-    list_s3_buckets()"""
+

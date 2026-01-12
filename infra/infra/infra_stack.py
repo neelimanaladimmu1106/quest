@@ -15,8 +15,7 @@ class InfraStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # new S3 bucket -
-        #bucket = s3.Bucket(self,"QuestBucket",block_public_access=s3.BlockPublicAccess.BLOCK_ALL,)
+        # new S3 bucket - s3.Bucket(self,"QuestBucket",block_public_access=s3.BlockPublicAccess.BLOCK_ALL,)
         # I have created the s3 bucket manually in UI - s3-quest-bls-dataset-neelima
         bucket = s3.Bucket.from_bucket_name(self,"ExistingBucket","s3-quest-bls-dataset-neelima")
 
